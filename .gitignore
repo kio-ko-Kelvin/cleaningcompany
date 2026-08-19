@@ -1,0 +1,61 @@
+.env
+db.sqlite3
+media/
+sqlite3
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+myenv/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Django
+*.log
+local_settings.py
+
+# Static files collected by collectstatic
+staticfiles/
+
+# User uploaded files (optional)
+media/
+
+# IDEs
+.vscode/
+.idea/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.cache/
+
+# Type checkers
+.mypy_cache/
+.ruff_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Node.js (if using Tailwind, Vite, etc.)
+node_modules/
+
+# Editor swap files
+*.swp
+*.swo
+*~
