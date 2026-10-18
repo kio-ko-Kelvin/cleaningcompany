@@ -1,8 +1,6 @@
-console.log("Hoorah!!!! My scripts file is all setup")
-
 function backtotop() {
     //Scroll to introduction id
-    document.getElementById("introductiondiv").scrollIntoView({
+    document.getElementById("introductionnav").scrollIntoView({
         behavior:"smooth"
     });   
 }
