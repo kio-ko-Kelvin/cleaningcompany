@@ -1,0 +1,705 @@
+/* =========================================================
+   Gorgons Cleaning Company — main stylesheet
+   File location: static/companywebsiteapp/css/style.css
+   Built to match the supplied index.html structure.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --navy: #07345a;
+    --navy-deep: #052642;
+    --blue: #0878d1;
+    --blue-bright: #0786e8;
+    --green: #20df70;
+    --green-dark: #078b4c;
+    --ink: #102d50;
+    --muted: #526783;
+    --pale: #eff8ff;
+    --white: #ffffff;
+    --shadow: 0 10px 28px rgba(8, 57, 95, 0.10);
+    --radius: 12px;
+    --content-width: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 86px;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--white);
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', 'DM Sans', sans-serif;
+    line-height: 1.2;
+}
+
+h2 {
+    margin-bottom: 24px;
+    color: var(--navy);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+}
+
+h2::before {
+    display: block;
+    width: 38px;
+    height: 4px;
+    margin: 0 auto 12px;
+    background: var(--green);
+    content: "";
+}
+
+/* Header and navigation */
+#introductionnav {
+    position: relative;
+    color: var(--white);
+    background: var(--navy);
+}
+
+#introductionnav nav {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    width: 100%;
+    min-height: 76px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 12px max(5vw, calc((100vw - var(--content-width)) / 2));
+    background: linear-gradient(105deg, #0b426e, #052d50);
+}
+
+.brand {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.brand::before {
+    display: inline-grid;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    place-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 14px 14px 14px 5px;
+    background: linear-gradient(145deg, var(--white) 0 45%, var(--green) 46% 100%);
+    color: var(--navy);
+    content: "✦";
+    font-size: 1.45rem;
+}
+
+#introductionnav nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(14px, 2.2vw, 32px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#introductionnav nav li a {
+    display: inline-block;
+    padding: 10px 0;
+    color: #f1f7ff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 180ms ease;
+}
+
+#introductionnav nav li a:hover,
+#introductionnav nav li a:focus-visible {
+    color: var(--green);
+}
+
+/* Hero banner. Add a real hero image in CSS or keep the gradient fallback. */
+.hero {
+    position: relative;
+    display: flex;
+    min-height: 390px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 65px max(7vw, calc((100vw - 1120px) / 2));
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        linear-gradient(90deg, rgba(3, 32, 54, 0.94) 0%, rgba(3, 32, 54, 0.78) 38%, rgba(3, 32, 54, 0.10) 76%),
+        linear-gradient(135deg, #0a4269, #8aa9b9);
+    background-position: center;
+    background-size: cover;
+}
+
+/* Optional hero image:
+   Put the image at static/companywebsiteapp/images/hero-cleaning.jpg
+   and uncomment the next background declaration, keeping the gradient above it.
+*/
+/*
+.hero {
+    background-image:
+        linear-gradient(90deg, rgba(3, 32, 54, .94), rgba(3, 32, 54, .62) 42%, rgba(3, 32, 54, .08) 78%),
+        url("../images/hero-cleaning.jpg");
+}
+*/
+
+.hero h1 {
+    max-width: 570px;
+    margin-bottom: 18px;
+    color: var(--white);
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.hero h1::first-line {
+    color: var(--white);
+}
+
+.hero p {
+    max-width: 490px;
+    margin-bottom: 28px;
+    color: #edf7ff;
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+}
+
+.hero a {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px 8px 0;
+    padding: 12px 24px;
+    border: 2px solid var(--green);
+    border-radius: 999px;
+    background: var(--green);
+    color: #063c2a;
+    font-weight: 700;
+    transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.hero a + a {
+    border-color: rgba(255, 255, 255, 0.9);
+    background: transparent;
+    color: var(--white);
+}
+
+.hero a:hover {
+    transform: translateY(-2px);
+    background: #5df69a;
+}
+
+.hero a + a:hover {
+    background: var(--white);
+    color: var(--navy);
+}
+
+/* Main section defaults */
+main section {
+    padding: 72px max(5vw, calc((100vw - var(--content-width)) / 2));
+}
+
+main section > p {
+    max-width: 850px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* About section */
+#aboutsection {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
+    align-items: center;
+    gap: clamp(30px, 5vw, 68px);
+    background: var(--white);
+}
+
+#aboutsection h2 {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: -6px;
+    text-align: left;
+}
+
+#aboutsection h2::before {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#aboutsection p {
+    grid-column: 2;
+    grid-row: 2;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+}
+
+#aboutsection p span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+#aboutsection p span:last-child {
+    margin-top: 12px;
+    color: var(--green-dark);
+}
+
+#aboutsection::before {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: stretch;
+    min-height: 260px;
+    border-radius: var(--radius);
+    background:
+        linear-gradient(0deg, rgba(4, 48, 79, 0.10), rgba(4, 48, 79, 0.02)),
+        linear-gradient(135deg, #e4f8ee, #a4d8f1 55%, #f5fbff);
+    content: "";
+    box-shadow: var(--shadow);
+}
+
+/* Optional: use an image element inside #aboutsection for best results.
+   If you add <img src="{% static 'companywebsiteapp/images/about-cleaning.jpg' %}" alt="Cleaning supplies in a tidy home">,
+   remove the #aboutsection::before placeholder by setting its content to none. */
+#aboutsection:has(img) {
+    grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
+}
+
+#aboutsection img {
+    width: 100%;
+    height: 300px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    border-radius: var(--radius);
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+#aboutsection:has(img)::before {
+    display: none;
+}
+
+/* Cleaning service cards */
+#servicessection {
+    background: linear-gradient(180deg, #f3faff, #eaf6ff);
+}
+
+#servicessection h2 {
+    margin-bottom: 36px;
+}
+
+#servicessection {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+#servicessection h2 {
+    grid-column: 1 / -1;
+}
+
+.expertisearea {
+    position: relative;
+    min-width: 0;
+    padding: 0 20px 24px;
+    overflow: hidden;
+    border: 1px solid #e1effb;
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: 0 6px 18px rgba(15, 92, 145, 0.08);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.expertisearea:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.expertisearea h3 {
+    margin: 18px 0 10px;
+    color: var(--navy);
+    font-size: 1.08rem;
+    text-align: center;
+}
+
+.expertisearea p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.expertisearea::before {
+    display: block;
+    height: 145px;
+    margin: 0 -20px;
+    background: linear-gradient(135deg, #bfe8fa, #f4fbff 50%, #d4f8e3);
+    content: "";
+}
+
+/* Image-ready service cards: add an image as the first child of each article. */
+.expertisearea img {
+    width: calc(100% + 40px);
+    max-width: none;
+    height: 145px;
+    margin: 0 -20px;
+    object-fit: cover;
+}
+
+.expertisearea:has(img)::before {
+    display: none;
+}
+
+/* Why choose us */
+#trustnote {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 15%, rgba(32, 223, 112, 0.16), transparent 28%),
+        linear-gradient(115deg, #052c48, #07526a);
+    color: var(--white);
+}
+
+#trustnote h2 {
+    color: var(--white);
+}
+
+#trustnote > div {
+    max-width: 960px;
+    margin: 22px auto 0;
+    text-align: center;
+}
+
+#trustnote p {
+    color: #f0f8ff;
+}
+
+#transparencyaffirmation p {
+    font-size: 1.08rem;
+    font-style: italic;
+}
+
+#trustnote > div:not(#transparencyaffirmation) p {
+    margin-bottom: 0;
+}
+
+/* Testimonials */
+.navigationsection {
+    background: #f6fbff;
+}
+
+#testimonials h2,
+#contact h2 {
+    margin-bottom: 30px;
+}
+
+/* Add testimonial cards inside #testimonials; each card can use class="testimonial-card". */
+.testimonial-card {
+    padding: 24px;
+    border: 1px solid #e1effb;
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: 0 6px 18px rgba(15, 92, 145, 0.08);
+}
+
+.testimonial-card p {
+    color: var(--muted);
+}
+
+.testimonial-card .client-name {
+    margin-bottom: 4px;
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.testimonial-card .rating {
+    color: #ffb51b;
+    letter-spacing: 2px;
+}
+
+/* Contact */
+#contact {
+    background: linear-gradient(110deg, #07365a, #052746);
+    color: var(--white);
+}
+
+#contact h2 {
+    color: var(--white);
+}
+
+#contact p,
+#contact label {
+    color: #eaf5ff;
+}
+
+#contact form {
+    display: grid;
+    max-width: 720px;
+    gap: 16px;
+    margin: 0 auto;
+}
+
+#contact input,
+#contact textarea,
+#contact select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #c7d8e7;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+}
+
+#contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#contact button,
+#contact input[type="submit"] {
+    width: fit-content;
+    min-height: 46px;
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--green);
+    color: #063c2a;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+#contact button:hover,
+#contact input[type="submit"]:hover {
+    transform: translateY(-2px);
+    background: #5df69a;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 28px;
+    padding: 28px max(5vw, calc((100vw - var(--content-width)) / 2));
+    background: #031f37;
+    color: #d8e8f7;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: var(--green);
+    font-weight: 700;
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+#backtotop {
+    padding: 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+    transition: background 180ms ease, color 180ms ease;
+}
+
+#backtotop:hover {
+    background: var(--green);
+    color: var(--navy-deep);
+}
+
+/* Responsive layouts */
+@media (max-width: 1000px) {
+    #introductionnav nav {
+        flex-wrap: wrap;
+        gap: 12px 24px;
+    }
+
+    #introductionnav nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 8px 20px;
+    }
+
+    #servicessection {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #aboutsection {
+        gap: 28px;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        scroll-padding-top: 20px;
+    }
+
+    #introductionnav nav {
+        align-items: flex-start;
+        padding: 16px 5vw;
+    }
+
+    .brand {
+        font-size: 1.15rem;
+    }
+
+    #introductionnav nav ul {
+        width: 100%;
+        gap: 4px 16px;
+    }
+
+    #introductionnav nav li a {
+        padding: 6px 0;
+        font-size: 0.84rem;
+    }
+
+    .hero {
+        min-height: 390px;
+        padding: 56px 6vw;
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.25rem, 11vw, 3.5rem);
+    }
+
+    .hero a {
+        margin-right: 6px;
+        padding: 11px 17px;
+        font-size: 0.9rem;
+    }
+
+    main section {
+        padding: 52px 6vw;
+    }
+
+    #aboutsection {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    #aboutsection h2 {
+        margin: 0;
+        text-align: center;
+    }
+
+    #aboutsection h2::before {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #aboutsection::before {
+        min-height: 210px;
+        order: 0;
+    }
+
+    #aboutsection img {
+        height: 230px;
+        order: 0;
+    }
+
+    #aboutsection p {
+        font-size: 0.95rem;
+    }
+
+    #servicessection {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .expertisearea {
+        padding-bottom: 22px;
+    }
+
+    .expertisearea p {
+        font-size: 0.95rem;
+    }
+
+    #trustnote > div {
+        margin-top: 18px;
+    }
+
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 26px 6vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
