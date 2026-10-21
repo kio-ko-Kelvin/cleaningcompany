@@ -298,13 +298,10 @@ main section > p {
     background:
         linear-gradient(0deg, rgba(4, 48, 79, 0.10), rgba(4, 48, 79, 0.02)),
         linear-gradient(135deg, #e4f8ee, #a4d8f1 55%, #f5fbff);
-    content: "";
+    content: none;
     box-shadow: var(--shadow);
 }
 
-/* Optional: use an image element inside #aboutsection for best results.
-   If you add <img src="{% static 'companywebsiteapp/images/about-cleaning.jpg' %}" alt="Cleaning supplies in a tidy home">,
-   remove the #aboutsection::before placeholder by setting its content to none. */
 #aboutsection:has(img) {
     grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
 }
