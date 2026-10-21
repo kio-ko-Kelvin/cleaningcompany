@@ -180,17 +180,11 @@ h2::before {
     background-size: cover;
 }
 
-/* Optional hero image:
-   Put the image at static/companywebsiteapp/images/hero-cleaning.jpg
-   and uncomment the next background declaration, keeping the gradient above it.
-*/
-/*
 .hero {
     background-image:
         linear-gradient(90deg, rgba(3, 32, 54, .94), rgba(3, 32, 54, .62) 42%, rgba(3, 32, 54, .08) 78%),
         url("../images/hero-cleaning.jpg");
 }
-*/
 
 .hero h1 {
     max-width: 570px;
