@@ -233,7 +233,11 @@
                 {% endfor %}
             {% endif %}
 
-            <form method="post" action="{% url 'contact' %}" class="contact-form">
+            <form
+                method="POST"
+                action="{% url 'contact' %}"
+                class="contact-form"
+            >
                 {% csrf_token %}
 
                 {% for field in contact_form %}
