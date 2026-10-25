@@ -6,9 +6,6 @@ from django.conf import settings
 
 # Create your views here.
 def index(request):
-    return render(request, 'companywebsiteapp/index.html')
-
-def contact_view(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
 
@@ -50,6 +47,6 @@ def contact_view(request):
 
     return render(
         request,
-        "companywebsiteapp/index.html",
+        'companywebsiteapp/index.html',
         {"contact_form": form},
     )
